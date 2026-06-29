@@ -186,8 +186,13 @@
   .kosten-item h3{font-size:1.12rem;color:var(--forest);margin:0 0 4px}
   .kosten-item p{margin:0;color:var(--muted);font-size:.92rem}
   .kosten-item p b{color:var(--ink)}
-  .pay-note{margin:16px 0 0;font-size:.9rem;color:var(--muted);text-align:center;line-height:1.5}
+  .pay-note{margin:16px 0 0;font-size:.9rem;color:var(--muted);text-align:center;line-height:1.7}
   .pay-note b{color:var(--ink)}
+  .copy-btn{display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--gold-soft);
+    color:var(--gold);font-family:inherit;font-size:.78rem;font-weight:600;padding:3px 9px;border-radius:8px;
+    cursor:pointer;margin-left:4px;vertical-align:middle;transition:background .15s,color .15s,border-color .15s}
+  .copy-btn:hover{background:rgba(201,165,103,.1)}
+  .copy-btn.done{color:var(--forest);border-color:var(--forest);background:var(--white)}
 
   /* DAMALS & HEUTE — POLAROID-PAAR */
   .damals-paar{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:600px;margin:32px auto 0;align-items:start}
@@ -239,23 +244,6 @@
       </figure>
     </div>
     <p class="paar-note">Zusammen 110 Jahre jung.</p>
-  </div>
-</section>
-
-<!-- PORTRAITS -->
-<section style="padding-top:8px">
-  <div class="wrap">
-    <div class="folk duo">
-      <div class="ph">
-        <img src="images/leajon.jpg" alt="Lea und Jon" data-photo />
-        <span class="ph-label">images/leajon.jpg</span>
-      </div>
-      <div class="duo-cap">
-        <div class="duo-name"><span class="dn">Lea</span><span class="da">wird 40</span></div>
-        <div class="duo-sep">·</div>
-        <div class="duo-name"><span class="dn">Jon</span><span class="da">wird 70</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -359,7 +347,7 @@
         </div>
       </div>
     </div>
-    <p class="pay-note">Bezahlung der Übernachtung per <b>TWINT</b> an 079 859 98 30 oder <b>bar vor Ort</b>.</p>
+    <p class="pay-note">Bezahlung der Übernachtung per <b>TWINT</b> an <b>079 859 98 30</b> <button type="button" class="copy-btn" data-copy="0798599830">kopieren</button> oder <b>bar vor Ort</b>.</p>
   </div>
 </section>
 
@@ -409,7 +397,7 @@
       <h2>Danke — ihr seid dabei!</h2>
       <p style="color:var(--muted)">Wir freuen uns riesig auf euch. Hier eure Anmeldung im Überblick:</p>
       <div class="summary" id="summary"></div>
-      <p class="thanks-pay" id="thanksPay" style="display:none">Übernachtung bezahlen: per <b>TWINT</b> an <b>079 859 98 30</b> oder bar vor Ort.</p>
+      <p class="thanks-pay" id="thanksPay" style="display:none">Übernachtung bezahlen: per <b>TWINT</b> an <b>079 859 98 30</b> <button type="button" class="copy-btn" data-copy="0798599830">kopieren</button> oder bar vor Ort.</p>
       <p style="font-size:.9rem;color:var(--muted)">Etwas zu ändern? Melde dich bei <strong>Severin</strong> · <a href="mailto:severin.candrian@gmail.com" style="color:var(--gold)">severin.candrian@gmail.com</a> · 079 859 98 30</p>
     </div>
   </div>
@@ -459,6 +447,33 @@
     if(img.complete && img.naturalWidth > 0) ok();
     img.addEventListener('load', ok);
     img.addEventListener('error', ()=> img.remove());
+  });
+
+  // TWINT-Nummer in die Zwischenablage kopieren (mit Fallback für ältere Browser)
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise((resolve, reject)=>{
+      try{
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? resolve() : reject();
+      }catch(err){ reject(err); }
+    });
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.copy-btn');
+    if(!b) return;
+    copyText(b.dataset.copy).then(()=>{
+      const orig = b.textContent;
+      b.textContent = 'Kopiert ✓';
+      b.classList.add('done');
+      setTimeout(()=>{ b.textContent = orig; b.classList.remove('done'); }, 1800);
+    }).catch(()=>{});
   });
 
   const PRICE = 59;
