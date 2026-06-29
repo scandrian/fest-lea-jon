@@ -197,15 +197,24 @@
   .copy-btn:hover{background:rgba(201,165,103,.1)}
   .copy-btn.done{color:var(--forest);border-color:var(--forest);background:var(--white)}
 
-  /* DAMALS & HEUTE — POLAROID-PAAR */
-  .damals-paar{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:600px;margin:32px auto 0;align-items:start}
+  /* DAMALS & HEUTE — POLAROIDS + EINLEITUNG (Grid-Bereiche) */
+  .intro-grid{display:grid;gap:22px;max-width:600px;margin:0 auto;align-items:start;
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:"damals heute" "text text" "note note"}
+  .pola-damals{grid-area:damals}
+  .pola-heute{grid-area:heute}
+  .intro-text{grid-area:text}
+  .intro-text .lead{margin:0}
   .damals{background:#fff;padding:10px 10px 0;border:1px solid var(--line);box-shadow:var(--shadow)}
   .damals img{width:100%;display:block;aspect-ratio:5/6;object-fit:cover}
   .damals-cap{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--forest);text-align:center;padding:10px 6px 12px;line-height:1.2}
   .rot-l{transform:rotate(-1.5deg)}
   .rot-r{transform:rotate(1.5deg)}
-  .paar-note{text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);margin:24px 0 0}
-  @media(max-width:520px){ .damals-paar{grid-template-columns:1fr;max-width:300px;gap:30px} }
+  .paar-note{grid-area:note;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);margin:4px 0 0}
+  @media(max-width:520px){
+    .intro-grid{grid-template-columns:1fr;max-width:360px;gap:24px;
+      grid-template-areas:"damals" "text" "heute" "note"}
+  }
   .thanks-pay{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:.9rem;color:var(--ink);margin:0 0 16px;text-align:left}
   .thanks-pay b{color:var(--ink)}
 
@@ -236,26 +245,22 @@
 <!-- DAMALS & HEUTE — leicht überlappend auf dem grünen Hero -->
 <div class="hero-overlap">
   <div class="wrap">
-    <div class="damals-paar">
-      <figure class="damals rot-l">
+    <div class="intro-grid">
+      <figure class="damals rot-l pola-damals">
         <img src="images/damals.jpg" alt="Jon mit der kleinen Lea im 2CV, früher" loading="lazy" />
         <figcaption class="damals-cap">Damals</figcaption>
       </figure>
-      <figure class="damals rot-r">
+      <figure class="damals rot-r pola-heute">
         <img src="images/heute.jpg" alt="Lea und Jon heute" loading="lazy" />
         <figcaption class="damals-cap">Heute</figcaption>
       </figure>
+      <div class="intro-text">
+        <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
+      </div>
+      <p class="paar-note">Zusammen 110 Jahre jung.</p>
     </div>
-    <p class="paar-note">Zusammen 110 Jahre jung.</p>
   </div>
 </div>
-
-<!-- INTRO -->
-<section>
-  <div class="wrap">
-    <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
-  </div>
-</section>
 
 <!-- PROGRAMM -->
 <section style="background:var(--cream-2)">
