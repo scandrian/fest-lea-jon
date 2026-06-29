@@ -37,7 +37,9 @@
 
   /* HERO */
   .hero{color:var(--white);text-align:center;background:linear-gradient(180deg,#33503a 0%,#28402e 100%);}
-  .hero-inner{padding:72px 22px 60px}
+  .hero-inner{padding:72px 22px 104px}
+  .hero-overlap{position:relative;z-index:2;margin-top:-78px}
+  .hero-overlap .damals-paar{margin-top:0}
   .hero h1{font-size:clamp(3rem,16vw,5.2rem);letter-spacing:.01em}
   .hero h1 .amp{color:var(--gold-soft);font-style:italic}
   .hero .sub{font-size:1.05rem;margin-top:14px;opacity:.92}
@@ -229,15 +231,11 @@
       <span>📍 Jennyhaus, Wildhaus</span>
     </div>
   </div>
-  <svg class="ridge" viewBox="0 0 1440 42" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 42 L0 26 L210 6 L430 30 L660 4 L880 28 L1120 8 L1330 30 L1440 16 L1440 42 Z" fill="#f6f1e7"/>
-  </svg>
 </header>
 
-<!-- INTRO -->
-<section>
+<!-- DAMALS & HEUTE — leicht überlappend auf dem grünen Hero -->
+<div class="hero-overlap">
   <div class="wrap">
-    <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
     <div class="damals-paar">
       <figure class="damals rot-l">
         <img src="images/damals.jpg" alt="Jon mit der kleinen Lea im 2CV, früher" loading="lazy" />
@@ -249,6 +247,13 @@
       </figure>
     </div>
     <p class="paar-note">Zusammen 110 Jahre jung.</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section>
+  <div class="wrap">
+    <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
   </div>
 </section>
 
