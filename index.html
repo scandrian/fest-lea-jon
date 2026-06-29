@@ -189,11 +189,17 @@
   .pay-note{margin:16px 0 0;font-size:.9rem;color:var(--muted);text-align:center;line-height:1.5}
   .pay-note b{color:var(--ink)}
 
-  /* DAMALS-POLAROID */
-  .damals{max-width:300px;margin:34px auto 0;background:#fff;padding:10px 10px 0;
-    border:1px solid var(--line);box-shadow:var(--shadow);transform:rotate(-2deg)}
-  .damals img{width:100%;display:block}
-  .damals-cap{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--forest);text-align:center;padding:10px 6px 12px;line-height:1.2}
+  /* DAMALS & HEUTE — POLAROID-PAAR */
+  .damals-paar{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:600px;margin:32px auto 0;align-items:start}
+  .damals{background:#fff;padding:10px 10px 0;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .damals img{width:100%;display:block;aspect-ratio:5/6;object-fit:cover}
+  .damals-cap{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--forest);text-align:center;padding:10px 6px 12px;line-height:1.2}
+  .rot-l{transform:rotate(-1.5deg)}
+  .rot-r{transform:rotate(1.5deg)}
+  .paar-note{text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);margin:24px 0 0}
+  @media(max-width:520px){ .damals-paar{grid-template-columns:1fr;max-width:300px;gap:30px} }
+  .thanks-pay{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:.9rem;color:var(--ink);margin:0 0 16px;text-align:left}
+  .thanks-pay b{color:var(--ink)}
 
   @media(max-width:480px){
     .row2{grid-template-columns:1fr}
@@ -222,10 +228,17 @@
 <section>
   <div class="wrap">
     <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
-    <figure class="damals">
-      <img src="images/damals.jpg" alt="Jon mit der kleinen Lea im 2CV, früher" loading="lazy" />
-      <figcaption class="damals-cap">Damals — und jetzt 110 Jahre zusammen.</figcaption>
-    </figure>
+    <div class="damals-paar">
+      <figure class="damals rot-l">
+        <img src="images/damals.jpg" alt="Jon mit der kleinen Lea im 2CV, früher" loading="lazy" />
+        <figcaption class="damals-cap">Damals</figcaption>
+      </figure>
+      <figure class="damals rot-r">
+        <img src="images/heute.jpg" alt="Lea und Jon heute" loading="lazy" />
+        <figcaption class="damals-cap">Heute</figcaption>
+      </figure>
+    </div>
+    <p class="paar-note">Zusammen 110 Jahre jung.</p>
   </div>
 </section>
 
@@ -396,6 +409,7 @@
       <h2>Danke — ihr seid dabei!</h2>
       <p style="color:var(--muted)">Wir freuen uns riesig auf euch. Hier eure Anmeldung im Überblick:</p>
       <div class="summary" id="summary"></div>
+      <p class="thanks-pay" id="thanksPay" style="display:none">Übernachtung bezahlen: per <b>TWINT</b> an <b>079 859 98 30</b> oder bar vor Ort.</p>
       <p style="font-size:.9rem;color:var(--muted)">Etwas zu ändern? Melde dich bei <strong>Severin</strong> · <a href="mailto:severin.candrian@gmail.com" style="color:var(--gold)">severin.candrian@gmail.com</a> · 079 859 98 30</p>
     </div>
   </div>
@@ -538,6 +552,7 @@
     total.appendChild(el('span', null, 'CHF ' + (nightsTotal*PRICE) + '.–'));
     summary.appendChild(total);
 
+    document.getElementById('thanksPay').style.display = nightsTotal > 0 ? 'block' : 'none';
     document.getElementById('rsvpForm').style.display = 'none';
     const t = document.getElementById('thanks');
     t.classList.add('show');
