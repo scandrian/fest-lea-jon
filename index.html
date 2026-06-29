@@ -96,19 +96,20 @@
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .hint{font-size:.76rem;color:var(--muted);margin-top:6px}
 
-  .person{border:1px solid var(--line);border-radius:16px;padding:18px 16px;margin-bottom:14px;background:var(--cream)}
+  .person{padding:20px 0 0;margin-top:20px;border-top:1px solid var(--line)}
+  .person:first-child{padding-top:0;margin-top:0;border-top:0}
   .person-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
   .person-head .pn{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--forest)}
   .btn-remove{background:none;border:0;color:var(--muted);font-size:.8rem;cursor:pointer;text-decoration:underline;padding:4px}
   .checks{display:grid;gap:8px;margin-top:4px}
-  .chk{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;
-    background:var(--white);cursor:pointer;font-size:.9rem;font-weight:500;transition:border-color .15s,background .15s}
+  .chk{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;
+    background:var(--cream);cursor:pointer;font-size:.9rem;font-weight:500;transition:border-color .15s,background .15s}
   .chk:hover{border-color:var(--gold-soft)}
   .chk input{width:18px;height:18px;accent-color:var(--forest);flex:0 0 auto;margin:0}
   .chk .meta{margin-left:auto;font-size:.76rem;color:var(--muted);font-weight:400}
   .sub-label{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:14px 0 6px}
 
-  .btn-add{width:100%;padding:13px;border:1.5px dashed var(--gold-soft);background:transparent;color:var(--gold);
+  .btn-add{width:100%;margin-top:18px;padding:13px;border:1.5px dashed var(--gold-soft);background:transparent;color:var(--gold);
     border-radius:12px;font-family:inherit;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .15s}
   .btn-add:hover{background:rgba(201,165,103,.08)}
 
@@ -208,6 +209,10 @@
 
   @media(max-width:480px){
     .row2{grid-template-columns:1fr}
+    #anmeldung .wrap{padding:0 12px}
+    .form-card{padding:18px 14px}
+    .chk{padding:11px 10px;gap:9px}
+    .chk .meta{margin-left:8px}
   }
 </style>
 </head>
