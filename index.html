@@ -36,14 +36,13 @@
   .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
 
   /* HERO */
-  .hero{position:relative;color:var(--white);text-align:center;overflow:hidden;
-    background:linear-gradient(180deg,#33503a 0%,#28402e 100%);}
-  .hero-photo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    color:rgba(255,255,255,.32);font-size:.8rem;letter-spacing:.12em;
-    background:
-      radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.08), transparent 60%),
-      repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 12px, transparent 12px 24px);}
-  .hero-inner{position:relative;z-index:2;padding:70px 22px 60px}
+  .hero{color:var(--white);text-align:center;background:linear-gradient(180deg,#33503a 0%,#28402e 100%);}
+  .hero-img-band{position:relative;width:100%;height:300px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,.4);font-size:.8rem;letter-spacing:.12em;
+    background:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 12px, transparent 12px 24px);}
+  .hero-img-band img{object-position:center 36%}
+  .hero-inner{padding:40px 22px 54px}
   .hero h1{font-size:clamp(3rem,16vw,5.2rem);letter-spacing:.01em}
   .hero h1 .amp{color:var(--gold-soft);font-style:italic}
   .hero .sub{font-size:1.05rem;margin-top:14px;opacity:.92}
@@ -142,12 +141,10 @@
   .sum-total{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:8px;padding-top:12px;font-weight:600}
 
   /* PHOTO SLOTS */
-  .hero-photo,.folk .ph,.ort-photo{position:relative;overflow:hidden}
+  .hero-img-band,.folk .ph,.ort-photo{position:relative;overflow:hidden}
   [data-photo]{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
   .ph-label{position:relative;z-index:1}
   .has-img .ph-label{display:none}
-  .hero-photo.has-img::after{content:'';position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg,rgba(38,60,44,.40) 0%,rgba(38,60,44,.72) 100%)}
 
   /* GALERIE */
   .gallery{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
@@ -188,6 +185,12 @@
   .kosten-item p{margin:0;color:var(--muted);font-size:.92rem}
   .kosten-item p b{color:var(--ink)}
 
+  /* DAMALS-POLAROID */
+  .damals{max-width:300px;margin:34px auto 0;background:#fff;padding:10px 10px 0;
+    border:1px solid var(--line);box-shadow:var(--shadow);transform:rotate(-2deg)}
+  .damals img{width:100%;display:block}
+  .damals-cap{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--forest);text-align:center;padding:10px 6px 12px;line-height:1.2}
+
   @media(max-width:480px){
     .row2{grid-template-columns:1fr}
   }
@@ -197,7 +200,7 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-photo">
+  <div class="hero-img-band">
     <img src="images/hero.jpg" alt="Jon und Lea" data-photo />
     <span class="ph-label">Bild folgt: Jon &amp; Lea gemeinsam</span>
   </div>
@@ -219,6 +222,10 @@
 <section>
   <div class="wrap">
     <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
+    <figure class="damals">
+      <img src="images/damals.jpg" alt="Jon mit der kleinen Lea im 2CV, früher" loading="lazy" />
+      <figcaption class="damals-cap">Damals — und jetzt 110 Jahre zusammen.</figcaption>
+    </figure>
   </div>
 </section>
 
