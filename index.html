@@ -111,10 +111,10 @@
     border-radius:12px;font-family:inherit;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .15s}
   .btn-add:hover{background:rgba(201,165,103,.08)}
 
-  .cost{margin:22px 0;padding:18px;border-radius:14px;background:var(--forest);color:var(--white)}
-  .cost .ct{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
-  .cost .cv{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1;margin-top:4px}
-  .cost .cd{font-size:.82rem;opacity:.85;margin-top:6px}
+  .cost{margin:20px 0;padding:13px 16px;border-radius:12px;background:var(--cream);border:1px solid var(--line)}
+  .cost .ct{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .cost .cv{font-size:1.05rem;font-weight:600;color:var(--ink);margin-top:2px}
+  .cost .cd{font-size:.78rem;color:var(--muted);margin-top:3px}
 
   .btn-submit{width:100%;padding:16px;border:0;border-radius:13px;background:var(--gold);color:#fff;
     font-family:inherit;font-weight:600;font-size:1rem;letter-spacing:.02em;cursor:pointer;transition:background .15s,transform .05s}
@@ -167,6 +167,26 @@
     background:linear-gradient(180deg,transparent,rgba(38,60,44,.88))}
   .region-band .region-cap b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;display:block;line-height:1.1}
   .region-band .region-cap span{font-size:.86rem;opacity:.92}
+
+  /* INFO-LISTE (Ort) */
+  .info{margin:12px 0 0}
+  .info-row{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line)}
+  .info-row:first-child{border-top:0}
+  .info-row .ik{flex:0 0 86px;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;padding-top:2px}
+  .info-row .iv{margin:0;font-size:.92rem;flex:1}
+  .info-row .iv a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-soft)}
+  .info-row .iv a:hover{color:#9c7236}
+
+  /* PROGRAMM-ZEITEN */
+  .day .c .time{font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:3px}
+
+  /* KOSTEN-SEKTION */
+  .kosten-grid{display:grid;gap:14px;margin-top:8px}
+  .kosten-item{display:flex;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)}
+  .kosten-item .ki-ico{font-size:1.5rem;flex:0 0 auto;line-height:1.2}
+  .kosten-item h3{font-size:1.12rem;color:var(--forest);margin:0 0 4px}
+  .kosten-item p{margin:0;color:var(--muted);font-size:.92rem}
+  .kosten-item p b{color:var(--ink)}
 
   @media(max-width:480px){
     .row2{grid-template-columns:1fr}
@@ -235,19 +255,19 @@
 
     <div class="day">
       <div class="d"><div class="dow">Fr</div><div class="dt">18.9.</div></div>
-      <div class="c"><h3>Anreise &amp; gemütliches Zusammensein</h3><p>Ankommen, Apéro, Wiedersehen — der ruhige Auftakt ins Wochenende.</p></div>
+      <div class="c"><div class="time">ab 17:00 Uhr</div><h3>Anreise &amp; gemütliches Zusammensein</h3><p>Ankommen, Apéro, Wiedersehen — der ruhige Auftakt ins Wochenende.</p></div>
     </div>
     <div class="day">
       <div class="d"><div class="dow">Sa</div><div class="dt">19.9.</div></div>
-      <div class="c"><h3>Spaziergang &amp; Lunch</h3><p>Eine gemütliche Runde durchs Toggenburg mit Mittagessen unterwegs. <em>(Programm noch in Planung.)</em></p></div>
+      <div class="c"><div class="time">ab 10:30 Uhr</div><h3>Spaziergang &amp; Lunch</h3><p>Eine gemütliche Runde durchs Toggenburg mit Mittagessen unterwegs. <em>(Programm noch in Planung.)</em></p></div>
     </div>
     <div class="day">
       <div class="d"><div class="dow">Sa</div><div class="dt">19.9.</div></div>
-      <div class="c"><h3>Festessen &amp; Spiele</h3><p>Der grosse Abend: zusammen essen, anstossen und ein paar Spiele.</p></div>
+      <div class="c"><div class="time">ab 18:30 Uhr</div><h3>Festessen &amp; Spiele</h3><p>Der grosse Abend: zusammen essen, anstossen und ein paar Spiele.</p></div>
     </div>
     <div class="day">
       <div class="d"><div class="dow">So</div><div class="dt">20.9.</div></div>
-      <div class="c"><h3>Frühstück &amp; Abschied</h3><p>Gemeinsames Frühstück, dann geht's nach Hause.</p></div>
+      <div class="c"><div class="time">08:30–10:30 Uhr</div><h3>Frühstück &amp; Abschied</h3><p>Gemeinsames Frühstück, dann geht's nach Hause.</p></div>
     </div>
   </div>
 </section>
@@ -282,13 +302,48 @@
       <img src="images/r-churfirsten.jpg" alt="Die Churfirsten" loading="lazy" />
     </div>
 
-    <div class="facts">
-      <div class="fact"><div class="k">Übernachtung</div><div class="v">Platz für alle im Haus — Fr- und/oder Sa-Nacht</div></div>
-      <div class="fact"><div class="k">Anreise</div><div class="v">Auto (Parkplätze am Haus) oder ÖV bis Wildhaus</div></div>
-      <div class="fact"><div class="k">Check-in</div><div class="v">ab 16 Uhr · Check-out So 11 Uhr</div></div>
-      <div class="fact"><div class="k">Mitbringen</div><div class="v">Bequeme Schuhe &amp; Hausschuhe</div></div>
+    <div class="info">
+      <div class="info-row">
+        <div class="ik">Adresse</div>
+        <div class="iv">Jennyhaus, Hägis 746, 9658 Wildhaus<br/>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Jennyhaus%2C+H%C3%A4gis+746%2C+9658+Wildhaus" target="_blank" rel="noopener">Auf Google Maps öffnen ↗</a></div>
+      </div>
+      <div class="info-row">
+        <div class="ik">Anreise</div>
+        <div class="iv">Auto (Parkplätze am Haus) oder ÖV bis Wildhaus, Bus „Lisighaus"</div>
+      </div>
+      <div class="info-row">
+        <div class="ik">Check-in</div>
+        <div class="iv">ab 16:00 Uhr · Check-out Sonntag bis 11:00 Uhr</div>
+      </div>
     </div>
     <a class="more-link" href="https://bergundbett.ch/gruppenhaeuser/jennyhaus/" target="_blank" rel="noopener">Mehr über Haus &amp; Region erfahren →</a>
+  </div>
+</section>
+
+<!-- KOSTEN -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gut zu wissen</div>
+      <h2 class="section-title">Kosten</h2>
+    </div>
+    <div class="kosten-grid">
+      <div class="kosten-item">
+        <div class="ki-ico">🍽️</div>
+        <div>
+          <h3>Essen &amp; Trinken — von uns</h3>
+          <p>Abendessen, Frühstück und Getränke über das ganze Wochenende gehen auf uns. Darum müsst ihr euch nicht kümmern.</p>
+        </div>
+      </div>
+      <div class="kosten-item">
+        <div class="ki-ico">🛏️</div>
+        <div>
+          <h3>Übernachtung — selbst getragen</h3>
+          <p>Wer im Haus übernachten möchte, ist herzlich willkommen — Platz hat es für alle. Die Übernachtung (Bett, Reinigung &amp; Bettwäsche) übernimmt jede Person selbst: <b>CHF 59.– pro Person und Nacht</b>. Wer nur tagsüber dabei ist, zahlt nichts.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -326,7 +381,7 @@
       <div class="cost">
         <div class="ct">Kosten Übernachtung</div>
         <div class="cv" id="costVal">CHF 0.–</div>
-        <div class="cd" id="costBreak">Noch keine Übernachtung gewählt. CHF 59.– pro Person und Nacht, inkl. Abendessen &amp; Frühstück.</div>
+        <div class="cd" id="costBreak">Optional — nur falls ihr im Haus übernachtet. CHF 59.– pro Person und Nacht (Bett, Reinigung &amp; Bettwäsche).</div>
       </div>
 
       <button type="submit" class="btn-submit">Anmeldung absenden</button>
@@ -362,12 +417,12 @@
     </div>
     <div class="sub-label">Dabei bei</div>
     <div class="checks">
-      <label class="chk"><input type="checkbox" data-prog value="Fr — Zusammensein" /><span>Fr — Zusammensein</span><span class="meta">18.9. Abend</span></label>
-      <label class="chk"><input type="checkbox" data-prog value="Sa — Spaziergang & Lunch" /><span>Sa — Spaziergang &amp; Lunch</span><span class="meta">19.9. Tag</span></label>
-      <label class="chk"><input type="checkbox" data-prog value="Sa — Festessen & Spiele" /><span>Sa — Festessen &amp; Spiele</span><span class="meta">19.9. Abend</span></label>
-      <label class="chk"><input type="checkbox" data-prog value="So — Frühstück" /><span>So — Frühstück</span><span class="meta">20.9. Morgen</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Fr — Zusammensein" /><span>Fr — Zusammensein</span><span class="meta">ab 17:00</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Sa — Spaziergang & Lunch" /><span>Sa — Spaziergang &amp; Lunch</span><span class="meta">ab 10:30</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Sa — Festessen & Spiele" /><span>Sa — Festessen &amp; Spiele</span><span class="meta">ab 18:30</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="So — Frühstück" /><span>So — Frühstück</span><span class="meta">08:30</span></label>
     </div>
-    <div class="sub-label">Übernachtung</div>
+    <div class="sub-label">Übernachtung <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(optional)</span></div>
     <div class="checks">
       <label class="chk"><input type="checkbox" data-night value="Fr → Sa" /><span>Übernachtung Fr → Sa</span><span class="meta">CHF 59.–</span></label>
       <label class="chk"><input type="checkbox" data-night value="Sa → So" /><span>Übernachtung Sa → So</span><span class="meta">CHF 59.–</span></label>
@@ -412,8 +467,8 @@
     const total = nights * PRICE;
     document.getElementById('costVal').textContent = 'CHF ' + total + '.–';
     document.getElementById('costBreak').textContent = nights > 0
-      ? nights + ' Übernachtung' + (nights>1?'en':'') + ' × CHF 59.– (Bett, Abendessen & Frühstück inkl.)'
-      : 'Noch keine Übernachtung gewählt. CHF 59.– pro Person und Nacht, inkl. Abendessen & Frühstück.';
+      ? nights + ' Übernachtung' + (nights>1?'en':'') + ' × CHF 59.– (Bett, Reinigung & Bettwäsche)'
+      : 'Optional — nur falls ihr im Haus übernachtet. CHF 59.– pro Person und Nacht (Bett, Reinigung & Bettwäsche).';
   }
 
   peopleEl.addEventListener('change', recalc);
