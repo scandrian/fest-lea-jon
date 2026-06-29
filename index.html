@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>110 Jahre Lea & Jon — Anmeldung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --forest:#2f4733;
+    --forest-2:#3c5a42;
+    --cream:#f6f1e7;
+    --cream-2:#efe7d6;
+    --ink:#2a2622;
+    --muted:#6f6862;
+    --gold:#b08440;
+    --gold-soft:#c9a567;
+    --line:#e0d6c4;
+    --white:#fffdf9;
+    --radius:16px;
+    --shadow:0 14px 40px rgba(47,71,51,.10);
+    --shadow-sm:0 4px 16px rgba(47,71,51,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);background:var(--cream);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.05;margin:0}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
+
+  /* HERO */
+  .hero{position:relative;color:var(--white);text-align:center;overflow:hidden;
+    background:linear-gradient(180deg,#33503a 0%,#28402e 100%);}
+  .hero-photo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,.32);font-size:.8rem;letter-spacing:.12em;
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,.08), transparent 60%),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 12px, transparent 12px 24px);}
+  .hero-inner{position:relative;z-index:2;padding:70px 22px 60px}
+  .hero h1{font-size:clamp(3rem,16vw,5.2rem);letter-spacing:.01em}
+  .hero h1 .amp{color:var(--gold-soft);font-style:italic}
+  .hero .sub{font-size:1.05rem;margin-top:14px;opacity:.92}
+  .hero .meta{margin-top:26px;display:inline-flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;
+    font-size:.86rem;letter-spacing:.04em}
+  .hero .meta span{display:inline-flex;align-items:center;gap:7px;opacity:.95}
+  .hero .ridge{display:block;width:100%;height:42px}
+
+  section{padding:48px 0}
+  .lead{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;line-height:1.4;color:var(--forest);font-weight:500}
+  .section-title{font-size:2rem;color:var(--forest);margin-bottom:6px}
+  .section-head{margin-bottom:24px}
+
+  /* PORTRAITS */
+  .folks{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+  .folk{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+  .folk .ph{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:var(--cream-2);color:var(--muted);font-size:.72rem;letter-spacing:.06em;padding:10px}
+  .folk .cap{padding:12px 14px 16px}
+  .folk .cap .n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--forest);line-height:1}
+  .folk .cap .a{font-size:.8rem;color:var(--gold);font-weight:600;letter-spacing:.04em}
+
+  /* PROGRAMM */
+  .day{display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+  .day:first-child{border-top:0}
+  .day .d{flex:0 0 64px;text-align:center}
+  .day .d .dow{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold);line-height:1}
+  .day .d .dt{font-size:.72rem;color:var(--muted)}
+  .day .c h3{font-size:1.2rem;color:var(--ink);margin-bottom:2px}
+  .day .c p{margin:0;color:var(--muted);font-size:.92rem}
+
+  /* ORT */
+  .ort-photo{aspect-ratio:16/9;border-radius:var(--radius);background:var(--cream-2);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.74rem;letter-spacing:.06em;margin-bottom:18px;text-align:center;padding:12px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .fact{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow-sm)}
+  .fact .k{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .fact .v{font-size:.92rem;margin-top:3px}
+
+  /* FORM */
+  .form-card{background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px 22px}
+  label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+  input[type=text],input[type=email],input[type=tel],textarea{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--cream);
+    font-family:inherit;font-size:.95rem;color:var(--ink);transition:border-color .15s, box-shadow .15s}
+  input:focus,textarea:focus{outline:none;border-color:var(--gold-soft);box-shadow:0 0 0 3px rgba(201,165,103,.2);background:var(--white)}
+  textarea{resize:vertical;min-height:74px}
+  .field{margin-bottom:18px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hint{font-size:.76rem;color:var(--muted);margin-top:6px}
+
+  .person{border:1px solid var(--line);border-radius:16px;padding:18px 16px;margin-bottom:14px;background:var(--cream)}
+  .person-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .person-head .pn{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--forest)}
+  .btn-remove{background:none;border:0;color:var(--muted);font-size:.8rem;cursor:pointer;text-decoration:underline;padding:4px}
+  .checks{display:grid;gap:8px;margin-top:4px}
+  .chk{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;
+    background:var(--white);cursor:pointer;font-size:.9rem;font-weight:500;transition:border-color .15s,background .15s}
+  .chk:hover{border-color:var(--gold-soft)}
+  .chk input{width:18px;height:18px;accent-color:var(--forest);flex:0 0 auto;margin:0}
+  .chk .meta{margin-left:auto;font-size:.76rem;color:var(--muted);font-weight:400}
+  .sub-label{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:14px 0 6px}
+
+  .btn-add{width:100%;padding:13px;border:1.5px dashed var(--gold-soft);background:transparent;color:var(--gold);
+    border-radius:12px;font-family:inherit;font-weight:600;font-size:.9rem;cursor:pointer;transition:background .15s}
+  .btn-add:hover{background:rgba(201,165,103,.08)}
+
+  .cost{margin:22px 0;padding:18px;border-radius:14px;background:var(--forest);color:var(--white)}
+  .cost .ct{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+  .cost .cv{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1;margin-top:4px}
+  .cost .cd{font-size:.82rem;opacity:.85;margin-top:6px}
+
+  .btn-submit{width:100%;padding:16px;border:0;border-radius:13px;background:var(--gold);color:#fff;
+    font-family:inherit;font-weight:600;font-size:1rem;letter-spacing:.02em;cursor:pointer;transition:background .15s,transform .05s}
+  .btn-submit:hover{background:#9c7236}
+  .btn-submit:active{transform:translateY(1px)}
+  .privacy{font-size:.74rem;color:var(--muted);text-align:center;margin-top:14px}
+
+  footer{background:var(--forest);color:rgba(255,255,255,.8);text-align:center;padding:34px 22px;font-size:.84rem}
+  footer .ft-h{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--white);margin-bottom:6px}
+  footer a{color:var(--gold-soft);text-decoration:none}
+
+  /* THANK YOU */
+  .thanks{display:none;text-align:center;padding:30px 0}
+  .thanks.show{display:block}
+  .thanks .seal{width:64px;height:64px;border-radius:50%;background:var(--forest);color:var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.8rem}
+  .thanks h2{font-size:2.2rem;color:var(--forest)}
+  .summary{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:18px;margin:20px 0;text-align:left;font-size:.92rem}
+  .sum-row{padding:8px 0;border-top:1px dashed var(--line)}
+  .sum-row:first-child{border-top:0}
+  .sum-line{display:flex;justify-content:space-between;gap:12px}
+  .sum-name{font-weight:600}
+  .sum-meta{color:var(--muted)}
+  .badge{display:inline-block;background:var(--cream-2);border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:.78rem;margin:5px 4px 0 0}
+  .sum-total{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:8px;padding-top:12px;font-weight:600}
+
+  /* PHOTO SLOTS */
+  .hero-photo,.folk .ph,.ort-photo{position:relative;overflow:hidden}
+  [data-photo]{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+  .ph-label{position:relative;z-index:1}
+  .has-img .ph-label{display:none}
+  .hero-photo.has-img::after{content:'';position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(38,60,44,.40) 0%,rgba(38,60,44,.72) 100%)}
+
+  /* GALERIE */
+  .gallery{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin:18px -22px 4px;padding:0 22px 8px}
+  .gallery::-webkit-scrollbar{height:0}
+  .gallery img{flex:0 0 auto;width:210px;height:140px;object-fit:cover;border-radius:12px;
+    scroll-snap-align:start;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .gallery-hint{font-size:.74rem;color:var(--muted);margin:0 0 2px}
+  .more-link{display:inline-flex;align-items:center;gap:7px;margin-top:20px;color:var(--gold);font-weight:600;
+    font-size:.92rem;text-decoration:none;border-bottom:1.5px solid var(--gold-soft);padding-bottom:2px;transition:color .15s,border-color .15s}
+  .more-link:hover{color:#9c7236;border-color:#9c7236}
+
+  /* REGION-BAND */
+  .region-band{position:relative;height:300px;overflow:hidden}
+  .region-band img{width:100%;height:100%;object-fit:cover;display:block}
+  .region-band .region-cap{position:absolute;left:0;right:0;bottom:0;padding:48px 22px 18px;color:#fff;
+    background:linear-gradient(180deg,transparent,rgba(38,60,44,.88))}
+  .region-band .region-cap b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;display:block;line-height:1.1}
+  .region-band .region-cap span{font-size:.86rem;opacity:.92}
+
+  @media(max-width:480px){
+    .row2{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-photo">
+    <img src="images/hero.jpg" alt="Jon und Lea" data-photo />
+    <span class="ph-label">Bild folgt: Jon &amp; Lea gemeinsam</span>
+  </div>
+  <div class="hero-inner">
+    <div class="eyebrow" style="color:var(--gold-soft)">Wir feiern zusammen</div>
+    <h1>110&nbsp;Jahre<br/>Lea <span class="amp">&amp;</span> Jon</h1>
+    <p class="sub">Lea wird 40, Jon wird 70 — das feiern wir<br/>ein ganzes Wochenende lang im Toggenburg.</p>
+    <div class="meta">
+      <span>📅 18.–20. September</span>
+      <span>📍 Jennyhaus, Wildhaus</span>
+    </div>
+  </div>
+  <svg class="ridge" viewBox="0 0 1440 42" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 42 L0 26 L210 6 L430 30 L660 4 L880 28 L1120 8 L1330 30 L1440 16 L1440 42 Z" fill="#f6f1e7"/>
+  </svg>
+</header>
+
+<!-- INTRO -->
+<section>
+  <div class="wrap">
+    <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
+  </div>
+</section>
+
+<!-- PORTRAITS -->
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="folks">
+      <div class="folk">
+        <div class="ph">
+          <img src="images/lea.jpg" alt="Lea" data-photo />
+          <span class="ph-label">Bild folgt: Lea</span>
+        </div>
+        <div class="cap"><div class="n">Lea</div><div class="a">wird 40</div></div>
+      </div>
+      <div class="folk">
+        <div class="ph">
+          <img src="images/jon.jpg" alt="Jon" data-photo />
+          <span class="ph-label">Bild folgt: Jon</span>
+        </div>
+        <div class="cap"><div class="n">Jon</div><div class="a">wird 70</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMM -->
+<section style="background:var(--cream-2)">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Das Wochenende</div>
+      <h2 class="section-title">Programm</h2>
+      <p style="color:var(--muted);margin:4px 0 0;font-size:.9rem">Du wählst bei der Anmeldung, an welchen Programmpunkten du dabei bist.</p>
+    </div>
+
+    <div class="day">
+      <div class="d"><div class="dow">Fr</div><div class="dt">18.9.</div></div>
+      <div class="c"><h3>Anreise &amp; gemütliches Zusammensein</h3><p>Ankommen, Apéro, Wiedersehen — der ruhige Auftakt ins Wochenende.</p></div>
+    </div>
+    <div class="day">
+      <div class="d"><div class="dow">Sa</div><div class="dt">19.9.</div></div>
+      <div class="c"><h3>Spaziergang &amp; Lunch</h3><p>Eine gemütliche Runde durchs Toggenburg mit Mittagessen unterwegs. <em>(Programm noch in Planung.)</em></p></div>
+    </div>
+    <div class="day">
+      <div class="d"><div class="dow">Sa</div><div class="dt">19.9.</div></div>
+      <div class="c"><h3>Festessen &amp; Spiele</h3><p>Der grosse Abend: zusammen essen, anstossen und ein paar Spiele.</p></div>
+    </div>
+    <div class="day">
+      <div class="d"><div class="dow">So</div><div class="dt">20.9.</div></div>
+      <div class="c"><h3>Frühstück &amp; Abschied</h3><p>Gemeinsames Frühstück, dann geht's nach Hause.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGION-BAND -->
+<div class="region-band">
+  <img src="images/r-schwendisee.jpg" alt="Säntis spiegelt sich im Schwendisee" loading="lazy" />
+  <div class="region-cap"><b>Der Schwendisee</b><span>Nur 10 Gehminuten vom Haus — mit dem Säntis im Wasser.</span></div>
+</div>
+
+<!-- ORT -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Der Ort</div>
+      <h2 class="section-title">Jennyhaus, Wildhaus</h2>
+    </div>
+    <div class="ort-photo">
+      <img src="images/haus.jpg" alt="Jennyhaus in Wildhaus, Toggenburg" data-photo />
+      <span class="ph-label">images/haus.jpg</span>
+    </div>
+    <p style="color:var(--muted);margin-top:0">Ein frisch renoviertes Gruppenhaus im Toggenburg mit Blick auf Churfirsten und Säntis — mitten in den Bergen, mit Wiese, Grillstelle und Platz für uns alle.</p>
+
+    <p class="gallery-hint">Haus &amp; Region — wisch durch ›</p>
+    <div class="gallery">
+      <img src="images/g-aussen.jpg" alt="Aussenansicht des Jennyhaus" loading="lazy" />
+      <img src="images/g-stube.jpg" alt="Gemütliche Stube" loading="lazy" />
+      <img src="images/g-kueche.jpg" alt="Grosse Küche" loading="lazy" />
+      <img src="images/g-zimmer.jpg" alt="Schlafzimmer" loading="lazy" />
+      <img src="images/g-spiele.jpg" alt="Spielecke in der Stube" loading="lazy" />
+      <img src="images/r-saentis.jpg" alt="Säntis und Churfirsten über dem Toggenburg" loading="lazy" />
+      <img src="images/r-churfirsten.jpg" alt="Die Churfirsten" loading="lazy" />
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="k">Übernachtung</div><div class="v">Platz für alle im Haus — Fr- und/oder Sa-Nacht</div></div>
+      <div class="fact"><div class="k">Anreise</div><div class="v">Auto (Parkplätze am Haus) oder ÖV bis Wildhaus</div></div>
+      <div class="fact"><div class="k">Check-in</div><div class="v">ab 16 Uhr · Check-out So 11 Uhr</div></div>
+      <div class="fact"><div class="k">Mitbringen</div><div class="v">Bequeme Schuhe &amp; Hausschuhe</div></div>
+    </div>
+    <a class="more-link" href="https://bergundbett.ch/gruppenhaeuser/jennyhaus/" target="_blank" rel="noopener">Mehr über Haus &amp; Region erfahren →</a>
+  </div>
+</section>
+
+<!-- ANMELDUNG -->
+<section style="background:var(--cream-2)" id="anmeldung">
+  <div class="wrap">
+    <div class="section-head" style="text-align:center">
+      <div class="eyebrow">Bis 19. Juli</div>
+      <h2 class="section-title">Anmeldung</h2>
+      <p style="color:var(--muted);margin:4px 0 0;font-size:.92rem">Ein Formular pro Paar oder Familie. Trag einfach alle ein, die mit dir kommen.</p>
+    </div>
+
+    <form class="form-card" id="rsvpForm" novalidate>
+      <div id="people"></div>
+      <button type="button" class="btn-add" id="addPerson">+ Weitere Person hinzufügen</button>
+
+      <div class="sub-label" style="margin-top:26px">Kontakt (für Rückfragen)</div>
+      <div class="row2">
+        <div class="field" style="margin-bottom:10px">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" placeholder="name@beispiel.ch" />
+        </div>
+        <div class="field" style="margin-bottom:10px">
+          <label for="phone">Handynummer</label>
+          <input type="tel" id="phone" placeholder="079 …" />
+        </div>
+      </div>
+      <p class="hint" id="contactHint">Mindestens eines von beiden, damit wir dich erreichen können.</p>
+
+      <div class="field" style="margin-top:18px">
+        <label for="message">Nachricht an uns <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+        <textarea id="message" placeholder="Grüsse, Fragen, alles was wir wissen sollten …"></textarea>
+      </div>
+
+      <div class="cost">
+        <div class="ct">Kosten Übernachtung</div>
+        <div class="cv" id="costVal">CHF 0.–</div>
+        <div class="cd" id="costBreak">Noch keine Übernachtung gewählt. CHF 59.– pro Person und Nacht, inkl. Abendessen &amp; Frühstück.</div>
+      </div>
+
+      <button type="submit" class="btn-submit">Anmeldung absenden</button>
+      <p class="privacy">Deine Angaben nutzen wir nur zur Organisation des Fests.</p>
+    </form>
+
+    <div class="thanks" id="thanks">
+      <div class="seal">✓</div>
+      <h2>Danke — ihr seid dabei!</h2>
+      <p style="color:var(--muted)">Wir freuen uns riesig auf euch. Hier eure Anmeldung im Überblick:</p>
+      <div class="summary" id="summary"></div>
+      <p style="font-size:.9rem;color:var(--muted)">Etwas zu ändern? Melde dich bei <strong>Severin</strong> · <a href="mailto:severin.candrian@gmail.com" style="color:var(--gold)">severin.candrian@gmail.com</a> · 079 859 98 30</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-h">110 Jahre Lea &amp; Jon</div>
+  <div>18.–20. September · Jennyhaus, Wildhaus</div>
+  <div style="margin-top:12px;font-size:.8rem;opacity:.75">Fragen? <a href="mailto:severin.candrian@gmail.com">Severin Candrian</a> · 079 859 98 30</div>
+</footer>
+
+<!-- PERSON-VORLAGE (statisches Markup, wird geklont) -->
+<template id="personTpl">
+  <div class="person">
+    <div class="person-head">
+      <div class="pn">Person</div>
+      <button type="button" class="btn-remove" data-remove>entfernen</button>
+    </div>
+    <div class="field" style="margin-bottom:4px">
+      <label>Name</label>
+      <input type="text" data-name placeholder="Vor- und Nachname" />
+    </div>
+    <div class="sub-label">Dabei bei</div>
+    <div class="checks">
+      <label class="chk"><input type="checkbox" data-prog value="Fr — Zusammensein" /><span>Fr — Zusammensein</span><span class="meta">18.9. Abend</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Sa — Spaziergang & Lunch" /><span>Sa — Spaziergang &amp; Lunch</span><span class="meta">19.9. Tag</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Sa — Festessen & Spiele" /><span>Sa — Festessen &amp; Spiele</span><span class="meta">19.9. Abend</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="So — Frühstück" /><span>So — Frühstück</span><span class="meta">20.9. Morgen</span></label>
+    </div>
+    <div class="sub-label">Übernachtung</div>
+    <div class="checks">
+      <label class="chk"><input type="checkbox" data-night value="Fr → Sa" /><span>Übernachtung Fr → Sa</span><span class="meta">CHF 59.–</span></label>
+      <label class="chk"><input type="checkbox" data-night value="Sa → So" /><span>Übernachtung Sa → So</span><span class="meta">CHF 59.–</span></label>
+    </div>
+    <div class="field" style="margin-top:14px;margin-bottom:0">
+      <label>Allergien / Ernährung <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+      <input type="text" data-diet placeholder="z. B. vegetarisch, glutenfrei …" />
+    </div>
+  </div>
+</template>
+
+<script>
+  // Bild-Slots: zeigt das Bild, sobald es lädt; fehlt die Datei, bleibt der Hinweis stehen.
+  document.querySelectorAll('[data-photo]').forEach(img=>{
+    const wrap = img.parentElement;
+    const ok = ()=> wrap.classList.add('has-img');
+    if(img.complete && img.naturalWidth > 0) ok();
+    img.addEventListener('load', ok);
+    img.addEventListener('error', ()=> img.remove());
+  });
+
+  const PRICE = 59;
+  const peopleEl = document.getElementById('people');
+  const tpl = document.getElementById('personTpl');
+
+  function addPerson(){
+    const node = tpl.content.firstElementChild.cloneNode(true);
+    peopleEl.appendChild(node);
+    renumber();
+  }
+  function renumber(){
+    [...peopleEl.children].forEach((el,i)=>{
+      el.querySelector('.pn').textContent = 'Person ' + (i+1);
+      el.querySelector('[data-remove]').style.visibility = i===0 ? 'hidden' : 'visible';
+    });
+  }
+  function recalc(){
+    let nights = 0;
+    [...peopleEl.children].forEach(el=>{
+      nights += el.querySelectorAll('[data-night]:checked').length;
+    });
+    const total = nights * PRICE;
+    document.getElementById('costVal').textContent = 'CHF ' + total + '.–';
+    document.getElementById('costBreak').textContent = nights > 0
+      ? nights + ' Übernachtung' + (nights>1?'en':'') + ' × CHF 59.– (Bett, Abendessen & Frühstück inkl.)'
+      : 'Noch keine Übernachtung gewählt. CHF 59.– pro Person und Nacht, inkl. Abendessen & Frühstück.';
+  }
+
+  peopleEl.addEventListener('change', recalc);
+  peopleEl.addEventListener('click', e=>{
+    if(e.target.matches('[data-remove]') && peopleEl.children.length > 1){
+      e.target.closest('.person').remove();
+      renumber(); recalc();
+    }
+  });
+  document.getElementById('addPerson').addEventListener('click', addPerson);
+  addPerson();
+
+  // Hilfsfunktionen: bauen Zusammenfassung rein über DOM + textContent (kein innerHTML)
+  function el(tag, cls, text){
+    const n = document.createElement(tag);
+    if(cls) n.className = cls;
+    if(text != null) n.textContent = text;
+    return n;
+  }
+  function badge(text){ return el('span','badge', text); }
+
+  document.getElementById('rsvpForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    if(!email && !phone){
+      const h = document.getElementById('contactHint');
+      h.style.color = '#b3402f';
+      h.textContent = 'Bitte E-Mail oder Handynummer angeben.';
+      document.getElementById('email').focus();
+      return;
+    }
+
+    const summary = document.getElementById('summary');
+    summary.replaceChildren();
+    let nightsTotal = 0;
+
+    [...peopleEl.children].forEach(p=>{
+      const name = p.querySelector('[data-name]').value.trim() || '(ohne Name)';
+      const progs = [...p.querySelectorAll('[data-prog]:checked')].map(c=>c.value);
+      const nights = [...p.querySelectorAll('[data-night]:checked')].map(c=>c.value);
+      const diet = p.querySelector('[data-diet]').value.trim();
+      nightsTotal += nights.length;
+
+      const row = el('div','sum-row');
+      const line = el('div','sum-line');
+      line.appendChild(el('span','sum-name', name));
+      line.appendChild(el('span','sum-meta', nights.length ? ('🛏 ' + nights.length + (nights.length>1?' Nächte':' Nacht')) : 'Tagesgast'));
+      row.appendChild(line);
+
+      if(progs.length){
+        progs.forEach(t=> row.appendChild(badge(t)));
+      } else {
+        const none = el('div','sum-meta','keine Programmpunkte gewählt');
+        none.style.fontSize = '.85rem'; none.style.marginTop = '5px';
+        row.appendChild(none);
+      }
+      if(diet) row.appendChild(badge('🍽 ' + diet));
+      summary.appendChild(row);
+    });
+
+    const total = el('div','sum-total');
+    total.appendChild(el('span', null, 'Kosten Übernachtung'));
+    total.appendChild(el('span', null, 'CHF ' + (nightsTotal*PRICE) + '.–'));
+    summary.appendChild(total);
+
+    document.getElementById('rsvpForm').style.display = 'none';
+    const t = document.getElementById('thanks');
+    t.classList.add('show');
+    t.scrollIntoView({behavior:'smooth'});
+  });
+</script>
+</body>
+</html>

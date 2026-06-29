@@ -1,0 +1,5 @@
+# Interne Planungs-Doks bleiben lokal, nicht ins öffentliche Repo
+.claude/
+CONTEXT.md
+docs/
+.DS_Store
