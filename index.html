@@ -200,7 +200,7 @@
   /* DAMALS & HEUTE — POLAROIDS + EINLEITUNG (Grid-Bereiche) */
   .intro-grid{display:grid;gap:22px;max-width:600px;margin:0 auto;align-items:start;
     grid-template-columns:1fr 1fr;
-    grid-template-areas:"damals heute" "text text" "note note"}
+    grid-template-areas:"damals heute" "text text"}
   .pola-damals{grid-area:damals}
   .pola-heute{grid-area:heute}
   .intro-text{grid-area:text}
@@ -213,7 +213,7 @@
   .paar-note{grid-area:note;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--gold);margin:4px 0 0}
   @media(max-width:520px){
     .intro-grid{grid-template-columns:1fr;max-width:360px;gap:24px;
-      grid-template-areas:"damals" "text" "heute" "note"}
+      grid-template-areas:"damals" "text" "heute"}
   }
   .thanks-pay{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:.9rem;color:var(--ink);margin:0 0 16px;text-align:left}
   .thanks-pay b{color:var(--ink)}
@@ -270,7 +270,6 @@
       <div class="intro-text">
         <p class="lead" data-i18n="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
       </div>
-      <p class="paar-note" data-i18n="paar_note">Zusammen 110 Jahre jung.</p>
     </div>
   </div>
 </div>
