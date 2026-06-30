@@ -492,6 +492,8 @@
   });
 
   const PRICE = 59;
+  // Google-Apps-Script Web-App-URL (…/exec). Leer = Demo-Modus (sendet nichts).
+  const ENDPOINT = '';
   const peopleEl = document.getElementById('people');
   const tpl = document.getElementById('personTpl');
 
@@ -552,6 +554,7 @@
     const summary = document.getElementById('summary');
     summary.replaceChildren();
     let nightsTotal = 0;
+    const persons = [];
 
     [...peopleEl.children].forEach(p=>{
       const name = p.querySelector('[data-name]').value.trim() || '(ohne Name)';
@@ -559,6 +562,18 @@
       const nights = [...p.querySelectorAll('[data-night]:checked')].map(c=>c.value);
       const diet = p.querySelector('[data-diet]').value.trim();
       nightsTotal += nights.length;
+
+      persons.push({
+        name,
+        fr: progs.includes('Fr — Zusammensein'),
+        saWalk: progs.includes('Sa — Spaziergang & Lunch'),
+        saDinner: progs.includes('Sa — Festessen & Spiele'),
+        soBreakfast: progs.includes('So — Frühstück'),
+        nFr: nights.includes('Fr → Sa'),
+        nSa: nights.includes('Sa → So'),
+        diet,
+        cost: nights.length * PRICE
+      });
 
       const row = el('div','sum-row');
       const line = el('div','sum-line');
@@ -581,6 +596,22 @@
     total.appendChild(el('span', null, 'Kosten Übernachtung'));
     total.appendChild(el('span', null, 'CHF ' + (nightsTotal*PRICE) + '.–'));
     summary.appendChild(total);
+
+    // An das Google Sheet senden (sofern ENDPOINT gesetzt ist)
+    if(ENDPOINT){
+      const payload = {
+        anmeldeId: 'A-' + Date.now() + '-' + Math.floor(Math.random()*10000),
+        email, phone,
+        message: document.getElementById('message').value.trim(),
+        total: nightsTotal * PRICE,
+        persons
+      };
+      fetch(ENDPOINT, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).catch(()=>{});
+    }
 
     document.getElementById('thanksPay').style.display = nightsTotal > 0 ? 'block' : 'none';
     document.getElementById('rsvpForm').style.display = 'none';
