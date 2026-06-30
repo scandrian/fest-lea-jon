@@ -218,6 +218,14 @@
   .thanks-pay{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:.9rem;color:var(--ink);margin:0 0 16px;text-align:left}
   .thanks-pay b{color:var(--ink)}
 
+  /* SPRACHUMSCHALTER */
+  .langtoggle{position:fixed;top:12px;right:12px;z-index:60;display:flex;gap:2px;
+    background:rgba(255,253,249,.92);border:1px solid var(--line);border-radius:999px;padding:3px;
+    box-shadow:var(--shadow-sm);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+  .langtoggle button{border:0;background:none;font-family:inherit;font-size:.72rem;font-weight:700;letter-spacing:.05em;
+    color:var(--muted);padding:5px 11px;border-radius:999px;cursor:pointer;transition:background .15s,color .15s}
+  .langtoggle button.active{background:var(--forest);color:#fff}
+
   @media(max-width:480px){
     .row2{grid-template-columns:1fr}
     #anmeldung .wrap{padding:0 12px}
@@ -229,12 +237,17 @@
 </head>
 <body>
 
+<div class="langtoggle" role="group" aria-label="Sprache / Lingua">
+  <button type="button" data-lang="de" class="active">DE</button>
+  <button type="button" data-lang="rm" title="Rumantsch (Puter)">RM</button>
+</div>
+
 <!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
-    <div class="eyebrow" style="color:var(--gold-soft)">Wir feiern zusammen</div>
-    <h1>110&nbsp;Jahre<br/>Lea <span class="amp">&amp;</span> Jon</h1>
-    <p class="sub">Lea wird 40, Jon wird 70 — das feiern wir<br/>ein ganzes Wochenende lang im Toggenburg.</p>
+    <div class="eyebrow" style="color:var(--gold-soft)" data-i18n="eyebrow_hero">Wir feiern zusammen</div>
+    <h1><span data-i18n="hero_jahre">110&nbsp;Jahre</span><br/>Lea <span class="amp">&amp;</span> Jon</h1>
+    <p class="sub" data-i18n="hero_sub">Lea wird 40, Jon wird 70 — das feiern wir ein ganzes Wochenende lang im Toggenburg.</p>
     <div class="meta">
       <span>📅 18.–20. September</span>
       <span>📍 Jennyhaus, Wildhaus</span>
@@ -248,16 +261,16 @@
     <div class="intro-grid">
       <figure class="damals rot-l pola-damals">
         <img src="images/damals.jpg" alt="Jon mit der kleinen Lea im 2CV, früher" loading="lazy" />
-        <figcaption class="damals-cap">Damals</figcaption>
+        <figcaption class="damals-cap" data-i18n="damals">Damals</figcaption>
       </figure>
       <figure class="damals rot-r pola-heute">
         <img src="images/heute.jpg" alt="Lea und Jon heute" loading="lazy" />
-        <figcaption class="damals-cap">Heute</figcaption>
+        <figcaption class="damals-cap" data-i18n="heute">Heute</figcaption>
       </figure>
       <div class="intro-text">
-        <p class="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
+        <p class="lead" data-i18n="lead">Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.</p>
       </div>
-      <p class="paar-note">Zusammen 110 Jahre jung.</p>
+      <p class="paar-note" data-i18n="paar_note">Zusammen 110 Jahre jung.</p>
     </div>
   </div>
 </div>
@@ -266,26 +279,26 @@
 <section style="background:var(--cream-2)">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Das Wochenende</div>
-      <h2 class="section-title">Programm</h2>
-      <p style="color:var(--muted);margin:4px 0 0;font-size:.9rem">Du wählst bei der Anmeldung, an welchen Programmpunkten du dabei bist.</p>
+      <div class="eyebrow" data-i18n="eyebrow_weekend">Das Wochenende</div>
+      <h2 class="section-title" data-i18n="programm">Programm</h2>
+      <p style="color:var(--muted);margin:4px 0 0;font-size:.9rem" data-i18n="programm_sub">Du wählst bei der Anmeldung, an welchen Programmpunkten du dabei bist.</p>
     </div>
 
     <div class="day">
       <div class="d"><div class="dow">Fr</div><div class="dt">18.9.</div></div>
-      <div class="c"><div class="time">ab 17:00 Uhr</div><h3>Anreise &amp; gemütliches Zusammensein</h3><p>Ankommen, Apéro, Wiedersehen — der ruhige Auftakt ins Wochenende.</p></div>
+      <div class="c"><div class="time" data-i18n="prog1_time">ab 17:00 Uhr</div><h3 data-i18n="prog1_title">Anreise &amp; gemütliches Zusammensein</h3><p data-i18n="prog1_desc">Ankommen, Apéro, Wiedersehen — der ruhige Auftakt ins Wochenende.</p></div>
     </div>
     <div class="day">
       <div class="d"><div class="dow">Sa</div><div class="dt">19.9.</div></div>
-      <div class="c"><div class="time">ab 10:30 Uhr</div><h3>Spaziergang &amp; Lunch</h3><p>Eine gemütliche Runde durchs Toggenburg mit Mittagessen unterwegs. <em>(Programm noch in Planung.)</em></p></div>
+      <div class="c"><div class="time" data-i18n="prog2_time">ab 10:30 Uhr</div><h3 data-i18n="prog2_title">Spaziergang &amp; Lunch</h3><p data-i18n="prog2_desc">Eine gemütliche Runde durchs Toggenburg mit Mittagessen unterwegs. (Programm noch in Planung.)</p></div>
     </div>
     <div class="day">
       <div class="d"><div class="dow">Sa</div><div class="dt">19.9.</div></div>
-      <div class="c"><div class="time">ab 18:30 Uhr</div><h3>Festessen &amp; Spiele</h3><p>Der grosse Abend: zusammen essen, anstossen und ein paar Spiele.</p></div>
+      <div class="c"><div class="time" data-i18n="prog3_time">ab 18:30 Uhr</div><h3 data-i18n="prog3_title">Festessen &amp; Spiele</h3><p data-i18n="prog3_desc">Der grosse Abend: zusammen essen, anstossen und ein paar Spiele.</p></div>
     </div>
     <div class="day">
       <div class="d"><div class="dow">So</div><div class="dt">20.9.</div></div>
-      <div class="c"><div class="time">08:30–10:30 Uhr</div><h3>Frühstück &amp; Abschied</h3><p>Gemeinsames Frühstück, dann geht's nach Hause.</p></div>
+      <div class="c"><div class="time" data-i18n="prog4_time">08:30–10:30 Uhr</div><h3 data-i18n="prog4_title">Frühstück &amp; Abschied</h3><p data-i18n="prog4_desc">Gemeinsames Frühstück, dann geht's nach Hause.</p></div>
     </div>
   </div>
 </section>
@@ -293,23 +306,23 @@
 <!-- REGION-BAND -->
 <div class="region-band">
   <img src="images/r-schwendisee.jpg" alt="Säntis spiegelt sich im Schwendisee" loading="lazy" />
-  <div class="region-cap"><b>Der Schwendisee</b><span>Nur 10 Gehminuten vom Haus — mit dem Säntis im Wasser.</span></div>
+  <div class="region-cap"><b data-i18n="region_title">Der Schwendisee</b><span data-i18n="region_desc">Nur 10 Gehminuten vom Haus — mit dem Säntis im Wasser.</span></div>
 </div>
 
 <!-- ORT -->
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Der Ort</div>
+      <div class="eyebrow" data-i18n="eyebrow_ort">Der Ort</div>
       <h2 class="section-title">Jennyhaus, Wildhaus</h2>
     </div>
     <div class="ort-photo">
       <img src="images/haus.jpg" alt="Jennyhaus in Wildhaus, Toggenburg" data-photo />
       <span class="ph-label">images/haus.jpg</span>
     </div>
-    <p style="color:var(--muted);margin-top:0">Ein frisch renoviertes Gruppenhaus im Toggenburg mit Blick auf Churfirsten und Säntis — mitten in den Bergen, mit Wiese, Grillstelle und Platz für uns alle.</p>
+    <p style="color:var(--muted);margin-top:0" data-i18n="ort_desc">Ein frisch renoviertes Gruppenhaus im Toggenburg mit Blick auf Churfirsten und Säntis — mitten in den Bergen, mit Wiese, Grillstelle und Platz für uns alle.</p>
 
-    <p class="gallery-hint">Haus &amp; Region — wisch durch ›</p>
+    <p class="gallery-hint" data-i18n="gallery_hint">Haus &amp; Region — wisch durch ›</p>
     <div class="gallery">
       <img src="images/g-aussen.jpg" alt="Aussenansicht des Jennyhaus" loading="lazy" />
       <img src="images/g-stube.jpg" alt="Gemütliche Stube" loading="lazy" />
@@ -322,20 +335,20 @@
 
     <div class="info">
       <div class="info-row">
-        <div class="ik">Adresse</div>
+        <div class="ik" data-i18n="label_adresse">Adresse</div>
         <div class="iv">Jennyhaus, Hägis 746, 9658 Wildhaus<br/>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Jennyhaus%2C+H%C3%A4gis+746%2C+9658+Wildhaus" target="_blank" rel="noopener">Auf Google Maps öffnen ↗</a></div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Jennyhaus%2C+H%C3%A4gis+746%2C+9658+Wildhaus" target="_blank" rel="noopener" data-i18n="maps_link">Auf Google Maps öffnen ↗</a></div>
       </div>
       <div class="info-row">
-        <div class="ik">Anreise</div>
-        <div class="iv">Auto (Parkplätze am Haus) oder ÖV bis Wildhaus, Bus „Lisighaus"</div>
+        <div class="ik" data-i18n="label_anreise">Anreise</div>
+        <div class="iv" data-i18n="anreise_val">Auto (Parkplätze am Haus) oder ÖV bis Wildhaus, Bus „Lisighaus"</div>
       </div>
       <div class="info-row">
-        <div class="ik">Check-in</div>
-        <div class="iv">ab 16:00 Uhr · Check-out Sonntag bis 11:00 Uhr</div>
+        <div class="ik" data-i18n="label_checkin">Check-in</div>
+        <div class="iv" data-i18n="checkin_val">ab 16:00 Uhr · Check-out Sonntag bis 11:00 Uhr</div>
       </div>
     </div>
-    <a class="more-link" href="https://bergundbett.ch/gruppenhaeuser/jennyhaus/" target="_blank" rel="noopener">Mehr über Haus &amp; Region erfahren →</a>
+    <a class="more-link" href="https://bergundbett.ch/gruppenhaeuser/jennyhaus/" target="_blank" rel="noopener" data-i18n="more_link">Mehr über Haus &amp; Region erfahren →</a>
   </div>
 </section>
 
@@ -343,26 +356,26 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Gut zu wissen</div>
-      <h2 class="section-title">Kosten</h2>
+      <div class="eyebrow" data-i18n="eyebrow_gut">Gut zu wissen</div>
+      <h2 class="section-title" data-i18n="kosten">Kosten</h2>
     </div>
     <div class="kosten-grid">
       <div class="kosten-item">
         <div class="ki-ico">🍽️</div>
         <div>
-          <h3>Essen &amp; Trinken — von uns</h3>
-          <p>Abendessen, Frühstück und Getränke über das ganze Wochenende gehen auf uns. Darum müsst ihr euch nicht kümmern.</p>
+          <h3 data-i18n="kosten1_title">Essen &amp; Trinken — von uns</h3>
+          <p data-i18n="kosten1_desc">Abendessen, Frühstück und Getränke über das ganze Wochenende gehen auf uns. Darum müsst ihr euch nicht kümmern.</p>
         </div>
       </div>
       <div class="kosten-item">
         <div class="ki-ico">🛏️</div>
         <div>
-          <h3>Übernachtung — selbst getragen</h3>
-          <p>Wer im Haus übernachten möchte, ist herzlich willkommen — Platz hat es für alle. Die Übernachtung (Bett, Reinigung &amp; Bettwäsche) übernimmt jede Person selbst: <b>CHF 59.– pro Person und Nacht</b>. Wer nur tagsüber dabei ist, zahlt nichts.</p>
+          <h3 data-i18n="kosten2_title">Übernachtung — selbst getragen</h3>
+          <p data-i18n="kosten2_desc">Wer im Haus übernachten möchte, ist herzlich willkommen — Platz hat es für alle. Die Übernachtung (Bett, Reinigung & Bettwäsche) übernimmt jede Person selbst: CHF 59.– pro Person und Nacht. Wer nur tagsüber dabei ist, zahlt nichts.</p>
         </div>
       </div>
     </div>
-    <p class="pay-note">Bezahlung der Übernachtung per <b>TWINT</b> an <b>079 859 98 30</b> <button type="button" class="copy-btn" data-copy="0798599830">kopieren</button> oder <b>bar vor Ort</b>.</p>
+    <p class="pay-note"><span data-i18n="pay_pre">Bezahlung der Übernachtung per</span> <b>TWINT</b> <span data-i18n="pay_an">an</span> <b>079 859 98 30</b> <button type="button" class="copy-btn" data-copy="0798599830" data-i18n="copy">kopieren</button> <span data-i18n="pay_or">oder</span> <b data-i18n="pay_cash">bar vor Ort</b>.</p>
   </div>
 </section>
 
@@ -370,58 +383,58 @@
 <section style="background:var(--cream-2)" id="anmeldung">
   <div class="wrap">
     <div class="section-head" style="text-align:center">
-      <div class="eyebrow">Bis 19. Juli</div>
-      <h2 class="section-title">Anmeldung</h2>
-      <p style="color:var(--muted);margin:4px 0 0;font-size:.92rem">Ein Formular pro Paar oder Familie. Trag einfach alle ein, die mit dir kommen.</p>
+      <div class="eyebrow" data-i18n="eyebrow_deadline">Bis 19. Juli</div>
+      <h2 class="section-title" data-i18n="anmeldung">Anmeldung</h2>
+      <p style="color:var(--muted);margin:4px 0 0;font-size:.92rem" data-i18n="anmeldung_sub">Ein Formular pro Paar oder Familie. Trag einfach alle ein, die mit dir kommen.</p>
     </div>
 
     <form class="form-card" id="rsvpForm" novalidate>
       <div id="people"></div>
-      <button type="button" class="btn-add" id="addPerson">+ Weitere Person hinzufügen</button>
+      <button type="button" class="btn-add" id="addPerson"><span data-i18n="add_person">Weitere Person hinzufügen</span></button>
 
-      <div class="sub-label" style="margin-top:26px">Kontakt (für Rückfragen)</div>
+      <div class="sub-label" style="margin-top:26px" data-i18n="kontakt">Kontakt (für Rückfragen)</div>
       <div class="row2">
         <div class="field" style="margin-bottom:10px">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" placeholder="name@beispiel.ch" />
+          <label for="email" data-i18n="label_email">E-Mail</label>
+          <input type="email" id="email" placeholder="name@beispiel.ch" data-i18n-ph="ph_email" />
         </div>
         <div class="field" style="margin-bottom:10px">
-          <label for="phone">Handynummer</label>
+          <label for="phone" data-i18n="label_phone">Handynummer</label>
           <input type="tel" id="phone" placeholder="079 …" />
         </div>
       </div>
-      <p class="hint" id="contactHint">Mindestens eines von beiden, damit wir dich erreichen können.</p>
+      <p class="hint" id="contactHint" data-i18n="contact_hint">Mindestens eines von beiden, damit wir dich erreichen können.</p>
 
       <div class="field" style="margin-top:18px">
-        <label for="message">Nachricht an uns <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-        <textarea id="message" placeholder="Grüsse, Fragen, alles was wir wissen sollten …"></textarea>
+        <label for="message"><span data-i18n="label_message">Nachricht an uns</span> <span style="font-weight:400;color:var(--muted)" data-i18n="optional">(optional)</span></label>
+        <textarea id="message" placeholder="Grüsse, Fragen, alles was wir wissen sollten …" data-i18n-ph="ph_message"></textarea>
       </div>
 
       <div class="cost">
-        <div class="ct">Kosten Übernachtung</div>
+        <div class="ct" data-i18n="cost_label">Kosten Übernachtung</div>
         <div class="cv" id="costVal">CHF 0.–</div>
         <div class="cd" id="costBreak">Optional — nur falls ihr im Haus übernachtet. CHF 59.– pro Person und Nacht (Bett, Reinigung &amp; Bettwäsche).</div>
       </div>
 
-      <button type="submit" class="btn-submit">Anmeldung absenden</button>
-      <p class="privacy">Deine Angaben nutzen wir nur zur Organisation des Fests.</p>
+      <button type="submit" class="btn-submit" data-i18n="submit">Anmeldung absenden</button>
+      <p class="privacy" data-i18n="privacy">Deine Angaben nutzen wir nur zur Organisation des Fests.</p>
     </form>
 
     <div class="thanks" id="thanks">
       <div class="seal">✓</div>
-      <h2>Danke — ihr seid dabei!</h2>
-      <p style="color:var(--muted)">Wir freuen uns riesig auf euch. Hier eure Anmeldung im Überblick:</p>
+      <h2 data-i18n="thanks_title">Danke — ihr seid dabei!</h2>
+      <p style="color:var(--muted)" data-i18n="thanks_sub">Wir freuen uns riesig auf euch. Hier eure Anmeldung im Überblick:</p>
       <div class="summary" id="summary"></div>
-      <p class="thanks-pay" id="thanksPay" style="display:none">Übernachtung bezahlen: per <b>TWINT</b> an <b>079 859 98 30</b> <button type="button" class="copy-btn" data-copy="0798599830">kopieren</button> oder bar vor Ort.</p>
-      <p style="font-size:.9rem;color:var(--muted)">Etwas zu ändern? Melde dich bei <strong>Severin</strong> · <a href="mailto:severin.candrian@gmail.com" style="color:var(--gold)">severin.candrian@gmail.com</a> · 079 859 98 30</p>
+      <p class="thanks-pay" id="thanksPay" style="display:none"><span data-i18n="thanks_pay">Übernachtung bezahlen: per</span> <b>TWINT</b> <span data-i18n="pay_an">an</span> <b>079 859 98 30</b> <button type="button" class="copy-btn" data-copy="0798599830" data-i18n="copy">kopieren</button> <span data-i18n="pay_or">oder</span> <span data-i18n="pay_cash">bar vor Ort</span>.</p>
+      <p style="font-size:.9rem;color:var(--muted)"><span data-i18n="thanks_change_pre">Etwas zu ändern? Melde dich bei</span> <strong>Severin</strong> · <a href="mailto:severin.candrian@gmail.com" style="color:var(--gold)">severin.candrian@gmail.com</a> · 079 859 98 30</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="ft-h">110 Jahre Lea &amp; Jon</div>
+  <div class="ft-h"><span data-i18n="hero_jahre">110 Jahre</span> Lea &amp; Jon</div>
   <div>18.–20. September · Jennyhaus, Wildhaus</div>
-  <div style="margin-top:12px;font-size:.8rem;opacity:.75">Fragen? <a href="mailto:severin.candrian@gmail.com">Severin Candrian</a> · 079 859 98 30</div>
+  <div style="margin-top:12px;font-size:.8rem;opacity:.75"><span data-i18n="footer_q">Fragen?</span> <a href="mailto:severin.candrian@gmail.com">Severin Candrian</a> · 079 859 98 30</div>
 </footer>
 
 <!-- PERSON-VORLAGE (statisches Markup, wird geklont) -->
@@ -429,32 +442,55 @@
   <div class="person">
     <div class="person-head">
       <div class="pn">Person</div>
-      <button type="button" class="btn-remove" data-remove>entfernen</button>
+      <button type="button" class="btn-remove" data-remove data-i18n="remove">entfernen</button>
     </div>
     <div class="field" style="margin-bottom:4px">
-      <label>Name</label>
-      <input type="text" data-name placeholder="Vor- und Nachname" />
+      <label data-i18n="label_name">Name</label>
+      <input type="text" data-name placeholder="Vor- und Nachname" data-i18n-ph="ph_name" />
     </div>
-    <div class="sub-label">Dabei bei</div>
+    <div class="sub-label" data-i18n="dabei_bei">Dabei bei</div>
     <div class="checks">
-      <label class="chk"><input type="checkbox" data-prog value="Fr — Zusammensein" /><span>Fr — Zusammensein</span><span class="meta">ab 17:00</span></label>
-      <label class="chk"><input type="checkbox" data-prog value="Sa — Spaziergang & Lunch" /><span>Sa — Spaziergang &amp; Lunch</span><span class="meta">ab 10:30</span></label>
-      <label class="chk"><input type="checkbox" data-prog value="Sa — Festessen & Spiele" /><span>Sa — Festessen &amp; Spiele</span><span class="meta">ab 18:30</span></label>
-      <label class="chk"><input type="checkbox" data-prog value="So — Frühstück" /><span>So — Frühstück</span><span class="meta">08:30</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Fr — Zusammensein" /><span data-i18n="chk_fr">Fr — Zusammensein</span><span class="meta">ab 17:00</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Sa — Spaziergang & Lunch" /><span data-i18n="chk_saWalk">Sa — Spaziergang &amp; Lunch</span><span class="meta">ab 10:30</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="Sa — Festessen & Spiele" /><span data-i18n="chk_saDinner">Sa — Festessen &amp; Spiele</span><span class="meta">ab 18:30</span></label>
+      <label class="chk"><input type="checkbox" data-prog value="So — Frühstück" /><span data-i18n="chk_soBreak">So — Frühstück</span><span class="meta">08:30</span></label>
     </div>
-    <div class="sub-label">Übernachtung <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(optional)</span></div>
+    <div class="sub-label"><span data-i18n="uebernachtung">Übernachtung</span> <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)" data-i18n="optional">(optional)</span></div>
     <div class="checks">
-      <label class="chk"><input type="checkbox" data-night value="Fr → Sa" /><span>Übernachtung Fr → Sa</span><span class="meta">CHF 59.–</span></label>
-      <label class="chk"><input type="checkbox" data-night value="Sa → So" /><span>Übernachtung Sa → So</span><span class="meta">CHF 59.–</span></label>
+      <label class="chk"><input type="checkbox" data-night value="Fr → Sa" /><span data-i18n="chk_night_fr">Übernachtung Fr → Sa</span><span class="meta">CHF 59.–</span></label>
+      <label class="chk"><input type="checkbox" data-night value="Sa → So" /><span data-i18n="chk_night_sa">Übernachtung Sa → So</span><span class="meta">CHF 59.–</span></label>
     </div>
     <div class="field" style="margin-top:14px;margin-bottom:0">
-      <label>Allergien / Ernährung <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
-      <input type="text" data-diet placeholder="z. B. vegetarisch, glutenfrei …" />
+      <label><span data-i18n="label_diet">Allergien / Ernährung</span> <span style="font-weight:400;color:var(--muted)" data-i18n="optional">(optional)</span></label>
+      <input type="text" data-diet placeholder="z. B. vegetarisch, glutenfrei …" data-i18n-ph="ph_diet" />
     </div>
   </div>
 </template>
 
 <script>
+  // ===== Zweisprachigkeit DE / RM (Puter, Übersetzung via ALAS / Lia Rumantscha) =====
+  const I18N = {
+    de: {"eyebrow_hero": "Wir feiern zusammen", "hero_jahre": "110 Jahre", "hero_sub": "Lea wird 40, Jon wird 70 — das feiern wir ein ganzes Wochenende lang im Toggenburg.", "damals": "Damals", "heute": "Heute", "lead": "Zwei runde Geburtstage, eine Familie, ein Haus in den Bergen. Wir möchten mit euch anstossen, wandern, spielen, essen und einfach zusammen sein. Sagt uns kurz, wer kommt — wir freuen uns auf euch.", "paar_note": "Zusammen 110 Jahre jung.", "eyebrow_weekend": "Das Wochenende", "programm": "Programm", "programm_sub": "Du wählst bei der Anmeldung, an welchen Programmpunkten du dabei bist.", "prog1_time": "ab 17:00 Uhr", "prog1_title": "Anreise & gemütliches Zusammensein", "prog1_desc": "Ankommen, Apéro, Wiedersehen — der ruhige Auftakt ins Wochenende.", "prog2_time": "ab 10:30 Uhr", "prog2_title": "Spaziergang & Lunch", "prog2_desc": "Eine gemütliche Runde durchs Toggenburg mit Mittagessen unterwegs. (Programm noch in Planung.)", "prog3_time": "ab 18:30 Uhr", "prog3_title": "Festessen & Spiele", "prog3_desc": "Der grosse Abend: zusammen essen, anstossen und ein paar Spiele.", "prog4_time": "08:30–10:30 Uhr", "prog4_title": "Frühstück & Abschied", "prog4_desc": "Gemeinsames Frühstück, dann geht's nach Hause.", "region_title": "Der Schwendisee", "region_desc": "Nur 10 Gehminuten vom Haus — mit dem Säntis im Wasser.", "eyebrow_ort": "Der Ort", "ort_desc": "Ein frisch renoviertes Gruppenhaus im Toggenburg mit Blick auf Churfirsten und Säntis — mitten in den Bergen, mit Wiese, Grillstelle und Platz für uns alle.", "gallery_hint": "Haus & Region — wisch durch ›", "label_adresse": "Adresse", "maps_link": "Auf Google Maps öffnen ↗", "label_anreise": "Anreise", "anreise_val": "Auto (Parkplätze am Haus) oder ÖV bis Wildhaus, Bus „Lisighaus“", "label_checkin": "Check-in", "checkin_val": "ab 16:00 Uhr · Check-out Sonntag bis 11:00 Uhr", "more_link": "Mehr über Haus & Region erfahren →", "eyebrow_gut": "Gut zu wissen", "kosten": "Kosten", "kosten1_title": "Essen & Trinken — von uns", "kosten1_desc": "Abendessen, Frühstück und Getränke über das ganze Wochenende gehen auf uns. Darum müsst ihr euch nicht kümmern.", "kosten2_title": "Übernachtung — selbst getragen", "kosten2_desc": "Wer im Haus übernachten möchte, ist herzlich willkommen — Platz hat es für alle. Die Übernachtung (Bett, Reinigung & Bettwäsche) übernimmt jede Person selbst: CHF 59.– pro Person und Nacht. Wer nur tagsüber dabei ist, zahlt nichts.", "pay_pre": "Bezahlung der Übernachtung per", "pay_an": "an", "pay_or": "oder", "pay_cash": "bar vor Ort", "copy": "kopieren", "eyebrow_deadline": "Bis 19. Juli", "anmeldung": "Anmeldung", "anmeldung_sub": "Ein Formular pro Paar oder Familie. Trag einfach alle ein, die mit dir kommen.", "add_person": "Weitere Person hinzufügen", "kontakt": "Kontakt (für Rückfragen)", "label_email": "E-Mail", "label_phone": "Handynummer", "contact_hint": "Mindestens eines von beiden, damit wir dich erreichen können.", "contact_error": "Bitte E-Mail oder Handynummer angeben.", "label_message": "Nachricht an uns", "optional": "(optional)", "ph_message": "Grüsse, Fragen, alles was wir wissen sollten …", "cost_label": "Kosten Übernachtung", "costbreak_default": "Optional — nur falls ihr im Haus übernachtet. CHF 59.– pro Person und Nacht (Bett, Reinigung & Bettwäsche).", "submit": "Anmeldung absenden", "privacy": "Deine Angaben nutzen wir nur zur Organisation des Fests.", "thanks_title": "Danke — ihr seid dabei!", "thanks_sub": "Wir freuen uns riesig auf euch. Hier eure Anmeldung im Überblick:", "thanks_change_pre": "Etwas zu ändern? Melde dich bei", "thanks_pay": "Übernachtung bezahlen: per", "footer_q": "Fragen?", "person": "Person", "remove": "entfernen", "label_name": "Name", "ph_name": "Vor- und Nachname", "dabei_bei": "Dabei bei", "uebernachtung": "Übernachtung", "label_diet": "Allergien / Ernährung", "ph_diet": "z. B. vegetarisch, glutenfrei …", "chk_fr": "Fr — Zusammensein", "chk_saWalk": "Sa — Spaziergang & Lunch", "chk_saDinner": "Sa — Festessen & Spiele", "chk_soBreak": "So — Frühstück", "chk_night_fr": "Übernachtung Fr → Sa", "chk_night_sa": "Übernachtung Sa → So", "tagesgast": "Tagesgast", "nacht": "Nacht", "naechte": "Nächte", "keine_prog": "keine Programmpunkte gewählt"},
+    rm: {"eyebrow_hero": "Nus festagiains insembel", "hero_jahre": "110 ans", "hero_sub": "Lea vain 40, Jon vain 70 — quai festivain nus üna fin d'eivna intera aint il Toggenburg.", "damals": "Da quel temp", "heute": "Hoz", "lead": "Duos anniversaris arduonds, üna famiglia, üna chesa in muntagna. Nus vulessans fer viva cun vus, chaminer, giuver, manger e simplamaing ster insembel. Dschè'ns cuort chi chi vain — ans allegrains sün vus.", "paar_note": "Insembel 110 ans giuvens.", "eyebrow_weekend": "La fin d'eivna", "programm": "Program", "programm_sub": "Tü tschernast tar l'annunzcha a chenüns puncts da program cha tü est da la partida.", "prog1_time": "a partir da las 17:00", "prog1_title": "Arriv e star da cumpagnia", "prog1_desc": "Arriver, aperitiv, a revair — il prüm cumanzamaint quiet per la fin d'eivna.", "prog2_time": "a partir da las 10:30", "prog2_title": "Spassegieda e gianter", "prog2_desc": "Ün gir pachific tres il Toggenburg cun gianter in viedi. (Program auncha in planisaziun.)", "prog3_time": "a partir da las 18:30", "prog3_title": "Tschaina e gös", "prog3_desc": "La granda saira: manger insembel, fer viva ed ün pêr gös.", "prog4_time": "08:30–10:30 h", "prog4_title": "Culazchun e cumgio", "prog4_desc": "Colazchun cumünaivel, alura vo que a chesa.", "region_title": "Il Lej da Schwend", "region_desc": "Be 10 minuts a pè da la chesa — cul Säntis aint ill'ova.", "eyebrow_ort": "Il lö", "ort_desc": "Üna chesa da gruppas frisch renoveda i'l Toggenburg cun vista sün Churfirsten e Säntis — immez las muntagnas, cun pro, lö da griller e plazza per nus tuots.", "gallery_hint": "Chesa e regiun — scuescha tres ›", "label_adresse": "Adressa", "maps_link": "Avrir sin Google Maps ↗", "label_anreise": "Viedi", "anreise_val": "Auto (parcadis tar la chesa) u ÖV fin Wildhaus, bus «Lisighaus»", "label_checkin": "Check-in", "checkin_val": "a partir da las 16:00 · check-out dumengia fin las 11:00", "more_link": "Dapü da la chesa e da la cuntredgia →", "eyebrow_gut": "Bun da savair", "kosten": "Cuosts", "kosten1_title": "Mangiar e baiver — da nus", "kosten1_desc": "Tschaina, culazchun e bavrandas sur tuot la fin d'eivna vaun sün nus. Da que nun's stuvais pisserer.", "kosten2_title": "Pernottaziun — purteda svessa", "kosten2_desc": "Chi chi voul pernotter in chesa es cordielmaing bainvgnieu — plazza ho que per tuots. La pernottaziun (let, nettagia e roba da let) surpiglia mincha persuna svess: CHF 59.– per persuna e not. Chi chi'd es be da la partida düraunt il di nu peja ünguotta.", "pay_pre": "Pajamaint da la pernottaziun per", "pay_an": "a", "pay_or": "u", "pay_cash": "in cuntauns sül lö", "copy": "copcher", "eyebrow_deadline": "Fin als 19 lügl", "anmeldung": "Annunzcha", "anmeldung_sub": "Ün formular per pêr u famiglia. Nota simplamaing a tuot quels chi vegnan cun te.", "add_person": "Agiundscher üna persuna", "kontakt": "Contact (per dumandas)", "label_email": "E-Mail", "label_phone": "Numer dal telefonin", "contact_hint": "Almain ün da tuots duos, uschè cha nus at pudains ragiundscher.", "contact_error": "Per plaschair indicher e-mail u numer da telefonin.", "label_message": "Messadi a nus", "optional": "(opziunel)", "ph_message": "Salüds, dumandas, tuot que cha nus dessans savair …", "cost_label": "Cuosts pernottaziun", "costbreak_default": "Opziunal — be in cas cha vus pernottais in chesa. CHF 59.– per persuna e not (let, nettagia e roba da let).", "submit": "Spedir l'annunzcha", "privacy": "Tias indicaziuns druvains nus be per organiser la festa.", "thanks_title": "Grazcha — vus essas da la partida!", "thanks_sub": "Nus ans allegrains enorm sün vus. Cò vossa annunzcha in survista:", "thanks_change_pre": "Da müder qualchosa? Annunzcha't tar", "thanks_pay": "Pajer la pernottaziun: per", "footer_q": "Dumandas?", "person": "Persuna", "remove": "eliminer", "label_name": "Nom", "ph_name": "Prenom e nom", "dabei_bei": "Da la partida tar", "uebernachtung": "Pernottaziun", "label_diet": "Allergias / nudrimaint", "ph_diet": "p. ex. vegetarian, sainza gluten …", "chk_fr": "Fr — Esser insembel", "chk_saWalk": "Sa — spassegieda e gianter", "chk_saDinner": "Sa — tschaina e gös", "chk_soBreak": "So — culazchun", "chk_night_fr": "Pernottaziun Fr → Sa", "chk_night_sa": "Pernottaziun Sa → So", "tagesgast": "giast dal di", "nacht": "not", "naechte": "nots", "keine_prog": "üngün punct da program tschernieu"}
+  };
+  const PROG_KEY = { 'Fr — Zusammensein':'chk_fr', 'Sa — Spaziergang & Lunch':'chk_saWalk', 'Sa — Festessen & Spiele':'chk_saDinner', 'So — Frühstück':'chk_soBreak' };
+  let curLang = (localStorage.getItem('lang') === 'rm') ? 'rm' : 'de';
+  function tr(key){ return (I18N[curLang] && I18N[curLang][key] != null) ? I18N[curLang][key] : (I18N.de[key] != null ? I18N.de[key] : key); }
+  function applyLang(root){
+    root.querySelectorAll('[data-i18n]').forEach(el=>{ const k = el.getAttribute('data-i18n'); if(I18N[curLang][k] != null) el.textContent = I18N[curLang][k]; });
+    root.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k = el.getAttribute('data-i18n-ph'); if(I18N[curLang][k] != null) el.placeholder = I18N[curLang][k]; });
+  }
+  function setLang(lang){
+    curLang = (lang === 'rm') ? 'rm' : 'de';
+    try { localStorage.setItem('lang', curLang); } catch(e){}
+    document.documentElement.lang = curLang;
+    applyLang(document);
+    document.querySelectorAll('.langtoggle button').forEach(b=> b.classList.toggle('active', b.dataset.lang === curLang));
+    if (typeof renumber === 'function') renumber();
+    if (typeof recalc === 'function') recalc();
+  }
+  document.querySelector('.langtoggle').addEventListener('click', e=>{ const b = e.target.closest('button'); if(b) setLang(b.dataset.lang); });
+
   // Bild-Slots: zeigt das Bild, sobald es lädt; fehlt die Datei, bleibt der Hinweis stehen.
   document.querySelectorAll('[data-photo]').forEach(img=>{
     const wrap = img.parentElement;
@@ -500,11 +536,12 @@
   function addPerson(){
     const node = tpl.content.firstElementChild.cloneNode(true);
     peopleEl.appendChild(node);
+    applyLang(node);
     renumber();
   }
   function renumber(){
     [...peopleEl.children].forEach((el,i)=>{
-      el.querySelector('.pn').textContent = 'Person ' + (i+1);
+      el.querySelector('.pn').textContent = tr('person') + ' ' + (i+1);
       el.querySelector('[data-remove]').style.visibility = i===0 ? 'hidden' : 'visible';
     });
   }
@@ -516,8 +553,8 @@
     const total = nights * PRICE;
     document.getElementById('costVal').textContent = 'CHF ' + total + '.–';
     document.getElementById('costBreak').textContent = nights > 0
-      ? nights + ' Übernachtung' + (nights>1?'en':'') + ' × CHF 59.– (Bett, Reinigung & Bettwäsche)'
-      : 'Optional — nur falls ihr im Haus übernachtet. CHF 59.– pro Person und Nacht (Bett, Reinigung & Bettwäsche).';
+      ? nights + ' × CHF 59.–'
+      : tr('costbreak_default');
   }
 
   peopleEl.addEventListener('change', recalc);
@@ -546,7 +583,7 @@
     if(!email && !phone){
       const h = document.getElementById('contactHint');
       h.style.color = '#b3402f';
-      h.textContent = 'Bitte E-Mail oder Handynummer angeben.';
+      h.textContent = tr('contact_error');
       document.getElementById('email').focus();
       return;
     }
@@ -578,13 +615,13 @@
       const row = el('div','sum-row');
       const line = el('div','sum-line');
       line.appendChild(el('span','sum-name', name));
-      line.appendChild(el('span','sum-meta', nights.length ? ('🛏 ' + nights.length + (nights.length>1?' Nächte':' Nacht')) : 'Tagesgast'));
+      line.appendChild(el('span','sum-meta', nights.length ? ('🛏 ' + nights.length + ' ' + (nights.length>1?tr('naechte'):tr('nacht'))) : tr('tagesgast')));
       row.appendChild(line);
 
       if(progs.length){
-        progs.forEach(t=> row.appendChild(badge(t)));
+        progs.forEach(v=> row.appendChild(badge(tr(PROG_KEY[v]) || v)));
       } else {
-        const none = el('div','sum-meta','keine Programmpunkte gewählt');
+        const none = el('div','sum-meta', tr('keine_prog'));
         none.style.fontSize = '.85rem'; none.style.marginTop = '5px';
         row.appendChild(none);
       }
@@ -593,7 +630,7 @@
     });
 
     const total = el('div','sum-total');
-    total.appendChild(el('span', null, 'Kosten Übernachtung'));
+    total.appendChild(el('span', null, tr('cost_label')));
     total.appendChild(el('span', null, 'CHF ' + (nightsTotal*PRICE) + '.–'));
     summary.appendChild(total);
 
@@ -619,6 +656,9 @@
     t.classList.add('show');
     t.scrollIntoView({behavior:'smooth'});
   });
+
+  // Initiale Sprache anwenden (gemerkte Wahl oder Deutsch)
+  setLang(curLang);
 </script>
 </body>
 </html>
